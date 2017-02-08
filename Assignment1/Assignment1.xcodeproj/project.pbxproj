@@ -306,6 +306,7 @@
 				FBAD2E7D1E2BF8D4008207C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
