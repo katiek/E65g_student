@@ -101,10 +101,15 @@ typealias Position = (row: Int, col: Int)
 enum CellState {
     // ** Your Problem 2 code goes here! Replace the contents of CellState **
     //  This shell code is here so that at all times the playground compiles and runs
-    case empty
+    case alive, empty, born, died
     
     var isAlive: Bool {
-        return false
+        switch self {
+        case .alive, .born:
+            return true
+        case .empty, .died:
+            return false
+        }
     }
 }
 /*:
@@ -117,8 +122,8 @@ enum CellState {
 // A struct representing a Cell in Conway's Game of Life
 struct Cell {
     // ** Your Problem 3 code goes here! replace the following two lines **
-    var position: Position
-    var state: CellState
+    var position = Position(0, 0)
+    var state = ""
 }
 /*:
  ## Problem 4:
@@ -129,28 +134,28 @@ struct Cell {
  */
 // ** Your Problem 4.1 answer goes here **
 /*
- 
+ _ is a placeholder that allows a value to be ignored so the argument continues passing through the function for the given range.
  */
 /*:
  2. what is the type of the `transform` variable?
  */
 // ** Your Problem 4.2 answer goes here **
 /*
- 
+ Tuple
  */
 /*:
  3. what is the return type of `map2`?
  */
 // ** Your Problem 4.3 answer goes here **
 /*
- 
+ Array of tuples
  */
 /*:
  4. what is `T` in this declaration?
  */
 // ** Your Problem 4.4 answer goes here **
 /*
- 
+ A generic type (T)
  */
 // A function which is like the standard map function but
 // which will operate only on a two dimensional array
@@ -175,7 +180,7 @@ func map2<T>(_ rows: Int, _ cols: Int, transform: (Int, Int) -> T) -> [[T]] {
 */
 // ** Your Problem 5 comment goes here! **
 /*
- 
+ The offsets are the positions of the live cell's neighbors relative to itself.
  */
 /*:
  ## Problem 6:
@@ -217,8 +222,8 @@ struct Grid {
     ]
     
     // ** Your Problem 6 code goes here! Change the following two lines **
-    var rows: Int = 0
-    var cols: Int = 0
+    var rows: Int = 10
+    var cols: Int = 10
     var cells: [[Cell]] = [[Cell]]()
     
     init(_ rows: Int,
@@ -226,7 +231,16 @@ struct Grid {
          cellInitializer: (Int, Int) -> CellState = { _,_ in .empty } ) {
         // ** Your Problem 7 code goes here! **
         map2(rows, cols) { row, col in
+            func map2<T>(_ rows: Int, _ cols: Int, transform: (Int, Int) -> T) -> [[T]] {
+                return (0 ..< rows).map { row in
+                    return (0 ..< cols).map { col in
+                        return transform(row, col)
+                    }
+                }
+            }
+
             // ** Your Problem 8 code goes here! **
+            Position = Position
         }
     }
 }
