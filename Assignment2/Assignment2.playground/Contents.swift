@@ -123,7 +123,7 @@ enum CellState {
 struct Cell {
     // ** Your Problem 3 code goes here! replace the following two lines **
     var position = Position(0, 0)
-    var state = ""
+    var state: ()
 }
 /*:
  ## Problem 4:
@@ -240,7 +240,7 @@ struct Grid {
             }
 
             // ** Your Problem 8 code goes here! **
-            Position = Position
+           
         }
     }
 }
@@ -280,14 +280,14 @@ struct Grid {
  */
 // ** your problem 10.1 answer goes here.
 /*
- 
+ specify the cell's neighbors are of the live cell
  */
 /*:
  2. Explain in one sentence when you would use the word `cell` in relation to this function
  */
 // ** your problem 10.2 answer goes here.
 /*
- 
+ When wanted to identifying the live cell to find all neighbor cells.
  */
 // An extension of Grid to add a function for computing the positions
 // of the 8 neighboring cells of a given cell
@@ -309,21 +309,21 @@ extension Grid {
  */
 // ** Your Problem 11.1 answer goes here **
 /*
- 
+ give position to live cell
  */
 /*:
  2. what is the return type of reduce2?
  */
 // ** Your Problem 11.2 answer goes here **
 /*
- 
+ compound tuple
  */
 /*:
  3. why is there no T parameter here as in map2 above?
  */
 // ** Your Problem 11.3 answer goes here **
 /*
- 
+ The type for range is already defined and has a value.
  */
 
 // A function which is useful for counting things in an array of arrays of things
@@ -481,7 +481,7 @@ extension Grid {
 
 // Problem 17 comment goes here
 /*
- 
+ All the values for position 1 for cell row and column in a tuple (x,y)
  */
 
 /*:
