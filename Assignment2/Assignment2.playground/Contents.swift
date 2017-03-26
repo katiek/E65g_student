@@ -87,6 +87,7 @@ import Foundation
 */
 // ** Your Problem 1 code goes here! replace the following line **
 typealias Position = (row: Int, col: Int)
+
 /*:
  ## Problem 2: 
  Using the enum `CellState` defined below:
@@ -116,6 +117,7 @@ enum CellState {
 */
 // A struct representing a Cell in Conway's Game of Life
 struct Cell {
+    struct Cell {
     // ** Your Problem 3 code goes here! replace the following two lines **
     var position: Position
     var state: CellState
