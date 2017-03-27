@@ -75,4 +75,15 @@ import UIKit
         UIColor.black.setStroke()
         path.stroke()
     }
+    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+//        lastTouchedPosition = process(touches: touches)
+//    }
+//    
+//    func process(touches: Set<UITouch>) -> Position? {
+//        guard touches.count == 1 else {return nil
+//            <#statements#>
+//        }
+//    }
+//
 }
