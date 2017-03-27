@@ -41,12 +41,9 @@ public enum CellState: String {
         }
     }
     
-    
-    
     func allValues() -> [CellState]{
         return [.alive,.empty,.born,.died]
     }
-
     
     public var isAlive: Bool {
         switch self {
@@ -56,6 +53,7 @@ public enum CellState: String {
     }
 
 }
+
 public struct Cell {
     var position = Position(row:0, col:0)
     var state = CellState.empty
