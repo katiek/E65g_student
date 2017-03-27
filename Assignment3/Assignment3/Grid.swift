@@ -45,6 +45,17 @@ public enum CellState: String {
         return [.alive,.empty,.born,.died]
     }
     
+    
+    mutating func toggle(value:CellState){
+        switch self {
+        case .empty, .died:
+            self = .alive
+        case .alive, .born:
+            self = .empty
+        }
+    }
+
+    
     public var isAlive: Bool {
         switch self {
         case .alive, .born: return true
